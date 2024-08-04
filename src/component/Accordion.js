@@ -1,10 +1,11 @@
+import classNames from "classnames";
 import {useState} from "react"
 import {GoTriangleLeft, GoTriangleDown, GoArrowLeft} from "react-icons/go";
-function Accordion({items}) {
-
+function Accordion({items,...rest}) {
+  
   const [expandedIndex,
     setExpandedIndex] = useState(-1)
-
+  
   const renderedItem = items.map((item, index) => {
     const isExpanded = index === expandedIndex //true
 

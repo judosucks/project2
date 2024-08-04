@@ -11,11 +11,11 @@ function DropDown({options}){
     console.log(option)
  }
     const rederedOptions = options.map((option)=>{
-        return <div onClick={()=>handleOptionClick(option)}  className="bg-orange-400 hover:bg-orange-800 cursor-pointer" key={option.value}>{option.label}</div>
+        return <div onClick={()=>handleOptionClick(option)}  className="text-center bg-gray-100 hover:bg-gray-300 cursor-pointer" key={option.value}>{option.label}</div>
     })
     return (
     <div>
-        <div onClick={handleClick}className='cursor-pointer'>select</div>
+        <div onClick={handleClick}className='cursor-pointer text-center'>select</div>
         {isOpen&&<div>{rederedOptions}</div>}
     </div>
     )
