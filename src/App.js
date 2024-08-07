@@ -1,31 +1,44 @@
 import AccordionPage from "./pages/AccordionPage";
+import CreateTitlePage from './pages/CreateTitlePage'
 import DropDown from "./component/DropDown";
 import Button from './component/Button'
 import Input from './component/Input'
-import { useContext, useEffect } from "react";
+import {useContext, useEffect, useState} from "react";
 import ComponentProvider from './provider/component-provider'
 function App() {
-   const {fetchBooks} = useContext(ComponentProvider)
+  const {fetchBooks} = useContext(ComponentProvider)
+  const [selection,
+    setSelection] = useState(null)
 
-   useEffect(()=>{
+  useEffect(() => {
     fetchBooks()
-   },[fetchBooks])
+  }, [fetchBooks])
 
-  const options =[{
-    label:"red",value:"red"},{
-    label:"green",value:"green"},{
-    label:"yellow",value:"yellow"
-  }]
+  const handleSelect = (option) => {
+    setSelection(option)
+  }
 
- return(
-  <div>
-    <AccordionPage/>
-    <DropDown options={options}/>
-    <Input/>
-    <Button primary rounded className="hover:bg-blue-50 hover:text-blue-900">button</Button>
-  </div>
-  
- )
+  const options = [
+    {
+      label: "red",
+      value: "red"
+    }, {
+      label: "green",
+      value: "green"
+    }, {
+      label: "yellow",
+      value: "yellow"
+    }
+  ]
+
+  return (
+    <div>
+      <AccordionPage/>
+      <DropDown options={options} selection={selection} onSelect={handleSelect}/>
+      <CreateTitlePage/>
+    </div>
+
+  )
 }
 
 export default App;

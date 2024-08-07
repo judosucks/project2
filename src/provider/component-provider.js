@@ -10,9 +10,20 @@ function Provider({children}){
         const response = await axios.get('http://localhost:3001/books')
         setBooks(response.data)
     })
+    
+    //create title 
+    const createTitle = async(title)=>{
+        const response = await axios.post('http://localhost:3001/books',{title})
+        console.log(title,response)
+        const updateTitle = [
+            ...books,
+            response.data
+        ]
+    }
     const valueToShare ={
       books,
-      fetchBooks
+      fetchBooks,
+      createTitle
     }
     return (
         <ComponentProvider.Provider value={valueToShare}>
