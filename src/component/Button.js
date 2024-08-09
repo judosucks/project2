@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import classNames from 'classnames'
 import {twMerge} from 'tailwind-merge'
 

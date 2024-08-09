@@ -6,3 +6,6 @@
 button > svg {
   margin-right: 5px;
 }
+button{
+  margin: 5px;
+}

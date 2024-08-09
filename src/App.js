@@ -5,6 +5,8 @@ import Button from './component/Button'
 import Input from './component/Input'
 import {useContext, useEffect, useState} from "react";
 import ComponentProvider from './provider/component-provider'
+import TitleList from "./pages/TitleList";
+
 function App() {
   const {fetchBooks} = useContext(ComponentProvider)
   const [selection,
@@ -16,6 +18,7 @@ function App() {
 
   const handleSelect = (option) => {
     setSelection(option)
+    console.log('handleselct at app',option)
   }
 
   const options = [
@@ -35,6 +38,7 @@ function App() {
     <div>
       <AccordionPage/>
       <DropDown options={options} selection={selection} onSelect={handleSelect}/>
+      <TitleList/>
       <CreateTitlePage/>
     </div>
 

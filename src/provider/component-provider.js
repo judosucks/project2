@@ -19,11 +19,34 @@ function Provider({children}){
             ...books,
             response.data
         ]
+        setBooks(updateTitle)
+    }
+    const deleteTitleById = async(id)=>{
+        await axios.delete(`http://localhost:3001/books/${id}`)
+        const updateTitle = books.filter((book)=>{
+            return book.id !== id
+        })
+        setBooks(updateTitle)
+    }
+    const editTitleById =async(id,newTitle)=>{
+        const response = await axios.put(`http://localhost:3001/books/${id}`,{title:newTitle})
+        const updateTitle = books.map((book)=>{
+            if(book.id === id){
+                return {
+                    ...book,
+                    ...response.data
+                }
+            }
+            return book
+        })
+        setBooks(updateTitle)
     }
     const valueToShare ={
       books,
       fetchBooks,
-      createTitle
+      createTitle,
+      deleteTitleById,
+      editTitleById
     }
     return (
         <ComponentProvider.Provider value={valueToShare}>
