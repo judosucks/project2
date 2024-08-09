@@ -1,11 +1,29 @@
-import {useState} from 'react'
+import {useState,useRef,useEffect} from 'react'
 import {GoFoldDown} from "react-icons/go";
 import Panel from './Panel';
 
 function DropDown({options, value, onChange}) {
     const [isOpen,
         setIsOpen] = useState(false)
+    const divEL = useRef()
 
+    useEffect(()=>{
+       const handler =(event)=>{
+        if(!divEL.current){
+            return()=>{
+                console.log('shit')
+            }
+        }
+        if(!divEL.current.contains(event.target)){
+            setIsOpen(false)
+            console.log(isOpen)
+        }
+       }
+       document.addEventListener('click',handler,true)
+       return()=>{
+        document.removeEventListener('click', handler)
+       }
+    },[])
     const handleClick = () => {
         setIsOpen((currentIsOpen) => !currentIsOpen) //pro writing 避免使用者按太快 true
     }
@@ -26,7 +44,7 @@ function DropDown({options, value, onChange}) {
     // let content ='select' if(selection){     content = selection.label } return a
     // new syntax **?.||**
     return (
-        <div className='w-48 relative'>
+        <div ref={divEL} className='w-48 relative'>
             <Panel
                 className="flex justify-between items-center cursor-pointer"
                 onClick={handleClick}>{value
