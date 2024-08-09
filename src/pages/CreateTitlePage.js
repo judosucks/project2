@@ -9,13 +9,12 @@ function CreateTitlePage() {
 
     const handleChange = (event) => {
         setTitle(event.target.value)
-        console.log('setting title', title)
+      
     }
     const handleSubmit = (event) => {
         event.preventDefault()
         createTitle(title)
         setTitle('')
-        console.log("i was excuted submit", title)
     }
     return (
         <div>
