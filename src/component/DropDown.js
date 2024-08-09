@@ -11,7 +11,7 @@ function DropDown({options, value, onChange}) {
        const handler =(event)=>{
         if(!divEL.current){
             return()=>{
-                console.log('shit')
+                alert('shit')
             }
         }
         if(!divEL.current.contains(event.target)){

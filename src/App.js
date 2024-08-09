@@ -35,7 +35,7 @@ function App() {
   ]
 
   return (
-    <div className="block">
+    <div className="flex">
       <AccordionPage/>
       <DropDown options={options} value={selection} onChange={handleSelect}/>
       <DropDown options={options} value={selection} onChange={handleSelect}/>
