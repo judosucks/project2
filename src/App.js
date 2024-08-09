@@ -35,10 +35,10 @@ function App() {
   ]
 
   return (
-    <div>
+    <div className="block">
       <AccordionPage/>
-      <DropDown options={options} selection={selection} onSelect={handleSelect}/>
-      <TitleList/>
+      <DropDown options={options} value={selection} onChange={handleSelect}/>
+      <DropDown options={options} value={selection} onChange={handleSelect}/>
       <CreateTitlePage/>
     </div>
 

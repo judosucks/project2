@@ -1,6 +1,8 @@
 import {useState} from 'react'
+import {GoFoldDown} from "react-icons/go";
+import Panel from './Panel';
 
-function DropDown({options ,selection,onSelect,inputSubmit}) {
+function DropDown({options, value, onChange}) {
     const [isOpen,
         setIsOpen] = useState(false)
 
@@ -11,25 +13,27 @@ function DropDown({options ,selection,onSelect,inputSubmit}) {
         setIsOpen((currentIsOpen) => {
             return !currentIsOpen
         }) //pro writing 避免使用者按太快 true
-        onSelect(option) //onSelect 
-        console.log(option,'!optin',!option,'option isOpen',isOpen)
+        onChange(option) //onChange from app.js
+        console.log(option, '!optin', !option, 'option isOpen', isOpen)
     }
-    const rederedOptions = options.map((option) => { //loop through divs dropdown 
+    const rederedOptions = options.map((option) => { //loop through divs dropdown
         return <div
             onClick={() => handleOptionClick(option)}
-            className="text-center bg-gray-100 hover:bg-gray-300 cursor-pointer"
+            className="hover:bg-sky-100 rounded cursor-pointer p-1"
             key={option.value}>{option.label}</div>
     })
 
-    // let content ='select'
-    // if(selection){
-    //     content = selection.label
-    // }
-    //return a new syntax **?.||** 
+    // let content ='select' if(selection){     content = selection.label } return a
+    // new syntax **?.||**
     return (
-        <div>
-            <div className='cursor-pointer text-center' onClick={handleClick}>{selection?.label||'select'}</div>
-            {isOpen && <div> {rederedOptions} </div>}
+        <div className='w-48 relative'>
+            <Panel
+                className="flex justify-between items-center cursor-pointer"
+                onClick={handleClick}>{value
+                    ?.label || 'select'}<GoFoldDown/></Panel>
+            {isOpen && <Panel className='absolute top-full'>
+                {rederedOptions}
+            </Panel>}
         </div>
     )
 }
