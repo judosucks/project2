@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import {Provider} from './provider/component-provider';
 import 'bulma/css/bulma.css';
-
+import {NavigationProvider} from './context/navigation';
 const el = document.getElementById('root')
 const root = ReactDOM.createRoot(el)
 root.render(
-    <Provider>
-<App/>
-</Provider>
-) 
-
+    <NavigationProvider>
+       
+            <App/>
+       
+    </NavigationProvider>
+)
