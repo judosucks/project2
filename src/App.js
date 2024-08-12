@@ -17,7 +17,7 @@ function App() {
                 <Route path='/buttons'><ButtonPage/></Route>
                 <Route path='/modal'><ModalPage/></Route>
             </div>
-            <ShanLi/>
+           
             
         </div>
     )
