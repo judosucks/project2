@@ -14,6 +14,9 @@ function SideBar() {
         },{
             label:'modal',
             path:'/modal'
+        },{
+            label:'table',
+            path:'/table'
         }
     ]
     const renderedLinks = links.map((link)=>{

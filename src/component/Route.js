@@ -5,6 +5,6 @@ function Route({path,children}){
     if(path === currentPath){
         return children
     }
-    return null
+    return console.log("null")
 }
 export default Route
