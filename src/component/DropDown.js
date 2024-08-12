@@ -27,11 +27,15 @@ function DropDown({options, value, onChange}) {
     const handleClick = () => {
         setIsOpen((currentIsOpen) => !currentIsOpen) //pro writing 避免使用者按太快 true
     }
+    useEffect(()=>{
+        
+    },[])
     const handleOptionClick = (option) => {
         setIsOpen((currentIsOpen) => {
             return !currentIsOpen
         }) //pro writing 避免使用者按太快 true
         onChange(option) //onChange from app.js
+        document.body.style.background = option.value
         console.log(option, '!optin', !option, 'option isOpen', isOpen)
     }
     const rederedOptions = options.map((option) => { //loop through divs dropdown
