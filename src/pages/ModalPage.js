@@ -7,11 +7,16 @@ function ModalPage(){
 
     const handleClick =()=>{
         setModalOpen(true)
+        console.log(modalOpen)
+    }
+    const handleClose=()=>{
+        setModalOpen(false)
+        console.log('clicked',modalOpen)
     }
     return(
-        <div>
+        <div className="relative">
             <Button primary rounded onClick={handleClick}>Something to tell you</Button>
-          {modalOpen && <Modal/>}  
+          {modalOpen && <Modal onClose={handleClose}/>}  
         </div>
     )
 }
