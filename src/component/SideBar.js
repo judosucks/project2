@@ -17,6 +17,9 @@ function SideBar() {
         },{
             label:'table',
             path:'/table'
+        },{
+            label:'chatgpt',
+            path:'/chatgpt'
         }
     ]
     const renderedLinks = links.map((link)=>{
