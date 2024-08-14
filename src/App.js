@@ -6,6 +6,7 @@ import ButtonPage from './pages/ButtonPage';
 import ModalPage from './pages/ModalPage'
 import TablePage from './pages/TablePage'
 import ChatGpt from './pages/ChatGpt';
+import CounterPage from './pages/CounterPage';
 import ShanLi from './extra/shanLi'
 import ShanLiEx from './extra/ShanLiEx'
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/modal'><ModalPage/></Route>
                 <Route path='/table'><TablePage/></Route>
                 <Route path='/chatgpt'><ChatGpt/></Route>
+                <Route path='/counter'><CounterPage  initialCount={0}/></Route>
             </div>
            
             

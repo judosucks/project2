@@ -20,6 +20,9 @@ function SideBar() {
         },{
             label:'chatgpt',
             path:'/chatgpt'
+        },{
+            label:'counter',
+            path:'/counter'
         }
     ]
     const renderedLinks = links.map((link)=>{
