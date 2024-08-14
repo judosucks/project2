@@ -28,6 +28,12 @@ const reducer = (state,action)=>{
             count:action.payload
         }
     }
+    if(action.type === 'valueAddToZero'){
+        return{
+            ...state,
+            valueToAdd:action.payload
+        }
+    }
     return state
     
 }
@@ -65,8 +71,14 @@ function CounterPage({initialCount}) {
         console.log(state)
         dispatch({
             type:'value-added',
-            payload:state.valueToAdd+state.count
+            payload:state.valueToAdd+state.count,
+            
         })
+        dispatch({
+            type:'valueAddToZero',
+            payload:state.valueToAdd = 0
+        })
+    
         
     }
     return (
