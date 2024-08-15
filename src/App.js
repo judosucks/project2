@@ -7,6 +7,7 @@ import ModalPage from './pages/ModalPage'
 import TablePage from './pages/TablePage'
 import ChatGpt from './pages/ChatGpt';
 import CounterPage from './pages/CounterPage';
+import CarPage from './pages/CarPage'
 import ShanLi from './extra/shanLi'
 import ShanLiEx from './extra/ShanLiEx'
 import PlayMovieSongPage from './pages/PlayMovieSongPage';
@@ -24,6 +25,7 @@ function App() {
                 <Route path='/chatgpt'><ChatGpt/></Route>
                 <Route path='/counter'><CounterPage  initialCount={0}/></Route>
                 <Route path='/movieandsong'><PlayMovieSongPage/></Route>
+                <Route path='/car-page'><CarPage/></Route>
             </div>
            
             
