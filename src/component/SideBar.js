@@ -22,11 +22,12 @@ function SideBar() {
             path:'/chatgpt'
         },{
             label:'counter',
-            path:'/counter'
-        },{
-            label:'movie-and-song',
-            path:'/movieandsong'
-        },{
+            path:'/counter'}
+        // },{
+            // label:'movie-and-song',
+            // path:'/movieandsong'
+        // },
+        ,{
             label:'car-page',
             path:'/car-page'
         }
