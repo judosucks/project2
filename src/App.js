@@ -24,7 +24,7 @@ function App() {
                 <Route path='/table'><TablePage/></Route>
                 <Route path='/chatgpt'><ChatGpt/></Route>
                 <Route path='/counter'><CounterPage  initialCount={0}/></Route>
-                <Route path='/movieandsong'><PlayMovieSongPage/></Route>
+                {/* <Route path='/movieandsong'><PlayMovieSongPage/></Route> */}
                 <Route path='/car-page'><CarPage/></Route>
             </div>
            
