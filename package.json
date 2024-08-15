@@ -11,7 +11,7 @@
     "bulma": "^1.0.2",
     "classnames": "^2.5.1",
     "express": "^4.19.2",
-    "faker-js": "^1.0.0",
+    "faker": "^5.5.3",
     "immer": "^10.1.1",
     "json-server": "^1.0.0-beta.1",
     "mongosh": "^2.2.15",
@@ -51,7 +51,6 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.1",
     "autoprefixer": "^10.4.20",
     "nodemon": "^3.1.4",
     "postcss": "^8.4.40",

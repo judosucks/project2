@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import SongPlayList from '../component/SongPlayList';
+// import * as faker from '@faker-js/faker';
 // This file has nothing to do with Redux
 // It exports functions that create random
 // movies and song
