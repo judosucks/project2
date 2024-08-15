@@ -23,6 +23,9 @@ function SideBar() {
         },{
             label:'counter',
             path:'/counter'
+        },{
+            label:'movie-and-song',
+            path:'/movieandsong'
         }
     ]
     const renderedLinks = links.map((link)=>{

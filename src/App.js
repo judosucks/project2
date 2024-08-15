@@ -9,6 +9,7 @@ import ChatGpt from './pages/ChatGpt';
 import CounterPage from './pages/CounterPage';
 import ShanLi from './extra/shanLi'
 import ShanLiEx from './extra/ShanLiEx'
+import PlayMovieSongPage from './pages/PlayMovieSongPage';
 function App() {
 
     return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path='/table'><TablePage/></Route>
                 <Route path='/chatgpt'><ChatGpt/></Route>
                 <Route path='/counter'><CounterPage  initialCount={0}/></Route>
+                <Route path='/movieandsong'><PlayMovieSongPage/></Route>
             </div>
            
             
